@@ -21,6 +21,9 @@ def main():
     elif choice == 6:
         filter_by_division(names, divs)
 
+    elif choice == 7:
+        calculate_payroll(ranks)
+
 
 def init_database():
     names = ["Spock", "James Kirk", "Jean-Luc Picard", "Seven of Nine", "Worf"]
@@ -151,6 +154,27 @@ def filter_by_division(names, divs):
             if divs [i] == divisionFilter:
                 print(names[i] + " ")
     return
+
+def calculate_payroll(ranks):
+    totalPay = 0
+
+    for i in range( len(ranks)):
+        if ranks [i] == "Commander":
+            totalPay += 1000
+        elif ranks [i] == "Lieutenent":
+            totalPay += 500
+        elif ranks [i] == "Captain":
+            totalPay += 200
+        elif ranks [i] == "Cadet":
+            totalPay += 100
+        elif ranks [i] == "Ensign":
+            totalPay += 50
+
+    print("Total crew costs: £" + str( totalPay))
+    return
+
+def count_officers(ranks):
+    
     
 
 
