@@ -115,9 +115,9 @@ def display_roster(names, ranks, divs, ids):
     table = ""
 
     for i in range( len(names)):
-        table += "ID" + str( ids[i]) + " "
-        table += "NAME:" + names[i] + " "
-        table += "RANK:" + ranks[i] + " "
+        table += "ID: " + str( ids[i]) + " "
+        table += "NAME: " + names[i] + " "
+        table += "RANK: " + ranks[i] + " "
         table += "DIVISION: " + divs[i] + "\n"
 
     print(table)
