@@ -15,6 +15,9 @@ def main():
     elif choice == 1:
         display_roster(names,ranks,divs,ids)
 
+    elif choice == 5:
+        search_crew(names, ranks, divs, ids)
+
 
 def init_database():
     names = ["Spock", "James Kirk", "Jean-Luc Picard", "Seven of Nine", "Worf"]
@@ -122,6 +125,16 @@ def display_roster(names, ranks, divs, ids):
 
     print(table)
     return
+
+def search_crew(names, ranks, divs, ids):
+    searchTerm = input("Please enter search term:\n")
+
+    for i in range( len(names)):
+        if searchTerm in names[i]:
+            print ( str( ids[i]) + " " + names[i] + " " + ranks [i] + " " + divs[i] + "\n")
+    return
+
+
 
 
 
