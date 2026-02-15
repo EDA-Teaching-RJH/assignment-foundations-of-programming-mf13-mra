@@ -18,6 +18,9 @@ def main():
     elif choice == 5:
         search_crew(names, ranks, divs, ids)
 
+    elif choice == 6:
+        filter_by_division(names, divs)
+
 
 def init_database():
     names = ["Spock", "James Kirk", "Jean-Luc Picard", "Seven of Nine", "Worf"]
@@ -134,6 +137,21 @@ def search_crew(names, ranks, divs, ids):
             print ( str( ids[i]) + " " + names[i] + " " + ranks [i] + " " + divs[i] + "\n")
     return
 
+
+def filter_by_division(names, divs):
+    correctDivisions = ["Command", "Sciences", "Operations"]
+
+    while True:
+        divisionFilter = input("Please enter division to filter by (Command, Operations, Sciences):\n")
+        if divisionFilter not in correctDivisions:
+            print("Please enter valid division.")
+        else:
+            break
+    for i in range( len(names)):
+            if divs [i] == divisionFilter:
+                print(names[i] + " ")
+    return
+    
 
 
 
