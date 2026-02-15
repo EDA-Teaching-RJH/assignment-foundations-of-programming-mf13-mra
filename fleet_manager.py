@@ -8,6 +8,9 @@ def init_database():
 
     return names, ranks, divs, ids
 
+def display_menu():
+    currentuser = input("User please enter full name:")
+
 
     
 
