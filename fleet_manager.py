@@ -24,6 +24,13 @@ def main():
     elif choice == 7:
         calculate_payroll(ranks)
 
+    elif choice == 8:
+        count_officers(ranks)
+
+    elif choice == 9:
+        print("Quiting...")
+        
+
 
 def init_database():
     names = ["Spock", "James Kirk", "Jean-Luc Picard", "Seven of Nine", "Worf"]
@@ -174,12 +181,17 @@ def calculate_payroll(ranks):
     return
 
 def count_officers(ranks):
+    totalCount = 0
+
+    for i in range( len(ranks)):
+        if ranks[i] == "Commander":
+            totalCount += 1
+        elif ranks[i] == "Captain":
+            totalCount += 1
+
+    print("Amount of officers in databases: " + str(totalCount))
+    return
     
-    
 
-
-
-
-    
 
 main()
