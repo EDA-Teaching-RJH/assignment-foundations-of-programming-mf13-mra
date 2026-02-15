@@ -12,6 +12,9 @@ def main():
     elif choice == 4:
         names, ranks, ids = update_rank(names, ranks,ids)
 
+    elif choice == 1:
+        display_roster(names,ranks,divs,ids)
+
 
 def init_database():
     names = ["Spock", "James Kirk", "Jean-Luc Picard", "Seven of Nine", "Worf"]
@@ -107,6 +110,19 @@ def update_rank(names, ranks, ids):
             break
 
     return names, ranks, ids
+
+def display_roster(names, ranks, divs, ids):
+    table = ""
+
+    for i in range( len(names)):
+        table += "ID" + str( ids[i]) + " "
+        table += "NAME:" + names[i] + " "
+        table += "RANK:" + ranks[i] + " "
+        table += "DIVISION: " + divs[i] + "\n"
+
+    print(table)
+    return
+
 
 
     
