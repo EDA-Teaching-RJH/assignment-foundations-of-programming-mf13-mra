@@ -3,6 +3,9 @@ def main():
 
     choice = display_menu()
 
+    if choice == 2:
+        names, ranks, divs, ids = add_member(names, ranks, divs, ids)
+
 
 def init_database():
     names = ["Spock", "James Kirk", "Jean-Luc Picard", "Seven of Nine", "Worf"]
@@ -26,6 +29,31 @@ def display_menu() -> str:
 
     return choice
 
+def add_member(names, ranks, divs, ids):
+    valid_ranks = ["Commander", "Lieutenant", "Captain", "Cadet", "Ensign"]
+
+    while True:
+        try:
+            addedId = int( input("Please enter ID:\n"))
+            if addedId in ids:
+                print("ID is already in list.")
+            else:
+                break
+        except:
+            print("Please enter integer.")
+
+    while True:
+        rank = input("Please enter valid rank:\n")
+
+        if rank not in valid_ranks:
+            print("Rank invalid")
+        else:
+            break
+
+    name = input("Please enter name:\n")
+    div = input("Please enter division:\n")
+    names.append(name), ranks.append(rank), divs.append(div), ids.append(addedId)
+    return names, ranks, divs, ids
     
 
 main()
